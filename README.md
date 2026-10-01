@@ -315,8 +315,8 @@ Follow these steps to run QubitQuest locally on your machine:
 
 ### 2. Clone the Repository
 ```bash
-git clone https://github.com/your-username/qubitquest-react.git
-cd qubitquest-react
+git clone https://github.com/ganesh7007/SIH-26140-UI-UX-Design-.git
+cd SIH-26140-UI-UX-Design-
 ```
 
 ### 3. Install Dependencies
@@ -354,7 +354,7 @@ npm run preview
 
 ## 👥 Authors & Acknowledgments
 
-- **Lead UI/UX Designer & Frontend Architect:** [Ganesh J](https://github.com/your-username)
+- **Lead UI/UX Designer & Frontend Architect:** [Ganesh J](https://github.com/ganesh7007)
 - **Problem Statement:** Smart India Hackathon (SIH) — **ID: 26140**
 - **Domain:** Artificial Intelligence & Quantum Computing Education
 
