@@ -1,0 +1,331 @@
+/* =========================================================
+   ErrorScreen.css — Animated Uiverse 404 & Protection Stage
+   From Uiverse.io by rohit_4476
+   ========================================================= */
+
+.custom-404-fullscreen-page {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  height: 100dvh;
+  background: #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 99999;
+  overflow: hidden;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+[data-theme="dark"] .custom-404-fullscreen-page {
+  background: #15222e;
+}
+
+.q404-fullscreen-wrapper {
+  width: 100vw;
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 28px;
+  z-index: 2;
+  position: relative;
+}
+
+/* Background Ambient Glows */
+.q404-ambient-glow {
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  border-radius: 50%;
+  filter: blur(140px);
+  opacity: 0.18;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.glow-cyan {
+  top: 5%;
+  left: 10%;
+  background: #22D3EE;
+}
+
+.glow-purple {
+  bottom: 10%;
+  right: 10%;
+  background: #8B5CF6;
+}
+
+/* =========================================================
+   UIVERSE ANIMATED 404 SVG STAGE (Full Width, No Borders)
+   ========================================================= */
+
+.not_found_body {
+  width: 100vw;
+  max-width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  border-radius: 0;
+  border: none;
+  box-shadow: none;
+  background: transparent;
+  overflow: hidden;
+}
+
+[data-theme="dark"] .not_found_body {
+  border: none;
+  box-shadow: none;
+}
+
+.not_found_container {
+  width: 100vw;
+  max-width: 100%;
+  padding: 0;
+  overflow: hidden;
+  background: transparent;
+  display: flex;
+  justify-content: center;
+}
+
+[data-theme="dark"] .not_found_container {
+  background: transparent;
+}
+
+.not_found_main {
+  margin: 0 auto;
+  width: 100vw;
+  max-width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.not_found_svg {
+  width: 100vw;
+  max-width: 100%;
+  height: auto;
+  min-height: 260px;
+  max-height: 56vh;
+  display: block;
+}
+
+/* SVG Styling */
+.not_found_st0 {
+  fill: #ffffff;
+}
+
+[data-theme="dark"] .not_found_st0 {
+  fill: #15222e;
+}
+
+.not_found_st2 {
+  fill: #5d89af;
+}
+
+.not_found_st3 {
+  fill: #709abf;
+}
+
+.not_found_st4,
+.not_found_st6 {
+  fill: #ffffff;
+  stroke: #b3dcdf;
+  stroke-miterlimit: 10;
+}
+
+.not_found_st6 {
+  stroke: #5d89af;
+  stroke-width: 2;
+}
+
+.not_found_st7,
+.not_found_st8,
+.not_found_st9 {
+  stroke: #709abf;
+  stroke-miterlimit: 10;
+}
+
+.not_found_st7 {
+  stroke-width: 5;
+  stroke-linecap: round;
+  fill: none;
+}
+
+.not_found_st8,
+.not_found_st9 {
+  fill: #ffffff;
+}
+
+[data-theme="dark"] .not_found_st8 {
+  fill: #0c1b29;
+}
+
+.not_found_st9 {
+  fill: none;
+}
+
+.not_found_st10 {
+  font-family: var(--font-display, 'Roboto Slab', sans-serif);
+  font-weight: 800;
+  letter-spacing: 0.5px;
+}
+
+/* SVG Animations */
+#not_found_cloud1 {
+  animation: not_found_cloud003 15s linear infinite !important;
+}
+
+#not_found_cloud2 {
+  animation: not_found_cloud002 25s linear infinite !important;
+}
+
+#not_found_cloud3 {
+  animation: not_found_cloud003 20s linear infinite !important;
+}
+
+#not_found_cloud4 {
+  animation: not_found_float 4s linear infinite !important;
+}
+
+#not_found_cloud5 {
+  animation: not_found_float 8s linear infinite !important;
+}
+
+#not_found_tracks {
+  animation: not_found_slide 650ms linear infinite !important;
+}
+
+#not_found_bumps {
+  animation: not_found_land 10000ms linear infinite !important;
+}
+
+#not_found_car-layers {
+  animation: not_found_jig 0.35s linear infinite !important;
+}
+
+#not_found_bracefront,
+#not_found_braceback {
+  animation: not_found_braces 1s linear infinite !important;
+}
+
+@keyframes not_found_jig {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(1.5px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+@keyframes not_found_land {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(1000px);
+  }
+}
+
+@keyframes not_found_slide {
+  from {
+    transform: translateX(0px);
+  }
+  to {
+    transform: translateX(100px);
+  }
+}
+
+@keyframes not_found_cloud002 {
+  0% {
+    transform: translateX(-1000px) translateY(3px);
+  }
+  100% {
+    transform: translateX(1000px) translateY(0);
+  }
+}
+
+@keyframes not_found_cloud003 {
+  0% {
+    transform: translateX(-1000px) translateY(3px);
+  }
+  100% {
+    transform: translateX(1000px) translateY(0);
+  }
+}
+
+@keyframes not_found_float {
+  0% {
+    transform: translateY(0px) translateX(0);
+  }
+  50% {
+    transform: translateY(8px) translateX(5px);
+  }
+  100% {
+    transform: translateY(0px) translateX(0);
+  }
+}
+
+@keyframes not_found_braces {
+  0% {
+    transform: translateX(-2px);
+  }
+  25% {
+    transform: translateX(3px);
+  }
+  50% {
+    transform: translateX(-2px);
+  }
+  75% {
+    transform: translateX(3px);
+  }
+  100% {
+    transform: translateX(-2px);
+  }
+}
+
+/* =========================================================
+   SOLITARY TRY AGAIN ACTION
+   ========================================================= */
+
+.q404-clean-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
+  width: 100%;
+}
+
+.q404-tryagain-btn {
+  min-width: 200px;
+  font-size: 1.05rem !important;
+  padding: 1.1em 2.6em !important;
+  letter-spacing: 0.08em !important;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .custom-404-fullscreen-page {
+    padding: 16px;
+  }
+  .not_found_body {
+    border-radius: 18px;
+  }
+  .q404-fullscreen-wrapper {
+    gap: 24px;
+  }
+  .q404-tryagain-btn {
+    width: 100%;
+    max-width: 280px;
+  }
+}
+

@@ -1,0 +1,122 @@
+.glass-surface {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  transition: opacity 0.26s ease-out, transform 0.1s ease, box-shadow 0.15s ease, border-color 0.15s ease, background-color 0.2s ease;
+  box-sizing: border-box;
+}
+
+.glass-surface__filter {
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  z-index: -1;
+}
+
+.glass-surface__content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem;
+  border-radius: inherit;
+  position: relative;
+  z-index: 1;
+}
+
+.glass-surface--svg {
+  background: light-dark(hsl(0 0% 100% / var(--glass-frost, 0.15)), hsl(0 0% 0% / var(--glass-frost, 0.35)));
+  backdrop-filter: var(--filter-id, url(#glass-filter)) saturate(var(--glass-saturation, 1.6));
+  -webkit-backdrop-filter: blur(16px) saturate(var(--glass-saturation, 1.6));
+  box-shadow:
+    0 0 2px 1px light-dark(color-mix(in oklch, black, transparent 85%), color-mix(in oklch, white, transparent 65%))
+      inset,
+    0 0 10px 4px light-dark(color-mix(in oklch, black, transparent 90%), color-mix(in oklch, white, transparent 85%))
+      inset,
+    0px 4px 16px rgba(17, 17, 26, 0.2),
+    0px 8px 24px rgba(17, 17, 26, 0.2),
+    0px 16px 56px rgba(17, 17, 26, 0.2),
+    0px 4px 16px rgba(255, 255, 255, 0.15) inset,
+    0px 8px 24px rgba(255, 255, 255, 0.08) inset;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+/* =========================================================
+   LIGHT MODE GLASS EFFECT (CRISP, CONTRASTED, FROSTED)
+   ========================================================= */
+[data-theme="light"] .glass-surface,
+[data-theme="light"] .course-glass-pill,
+[data-theme="light"] .glass-surface--fallback {
+  background: rgba(255, 255, 255, 0.85) !important;
+  backdrop-filter: blur(16px) saturate(1.8) brightness(1.02) !important;
+  -webkit-backdrop-filter: blur(16px) saturate(1.8) brightness(1.02) !important;
+  border: 1.5px solid rgba(203, 213, 225, 0.9) !important;
+  box-shadow:
+    0 4px 16px 0 rgba(0, 0, 0, 0.06),
+    0 1px 4px 0 rgba(0, 0, 0, 0.04),
+    inset 0 1.5px 1.5px 0 rgba(255, 255, 255, 1),
+    inset 0 -1px 1px 0 rgba(0, 0, 0, 0.04) !important;
+  color: #0F172A !important;
+}
+
+[data-theme="light"] .course-glass-pill:hover {
+  background: rgba(255, 255, 255, 0.95) !important;
+  border-color: #00CD9C !important;
+  box-shadow:
+    0 6px 20px 0 rgba(0, 205, 156, 0.15),
+    inset 0 1.5px 1.5px 0 rgba(255, 255, 255, 1) !important;
+}
+
+/* =========================================================
+   DARK MODE GLASS EFFECT (DEEP FROST, VIVID REFRACTIONS)
+   ========================================================= */
+:root:not([data-theme="light"]) .glass-surface,
+[data-theme="dark"] .glass-surface,
+[data-theme="dark"] .course-glass-pill,
+:root:not([data-theme="light"]) .course-glass-pill {
+  background: rgba(255, 255, 255, 0.09) !important;
+  backdrop-filter: blur(18px) saturate(2) brightness(1.15) !important;
+  -webkit-backdrop-filter: blur(18px) saturate(2) brightness(1.15) !important;
+  border: 1.5px solid rgba(255, 255, 255, 0.28) !important;
+  box-shadow:
+    inset 0 1.5px 2px 0 rgba(255, 255, 255, 0.6),
+    inset 0 -1.5px 2px 0 rgba(0, 0, 0, 0.5),
+    0 6px 20px 0 rgba(0, 0, 0, 0.45),
+    0 0 14px 1px rgba(168, 85, 247, 0.2) !important;
+  color: #FFFFFF !important;
+}
+
+:root:not([data-theme="light"]) .course-glass-pill svg,
+[data-theme="dark"] .course-glass-pill svg,
+:root:not([data-theme="light"]) .course-glass-pill svg path,
+[data-theme="dark"] .course-glass-pill svg path,
+:root:not([data-theme="light"]) .course-glass-pill .reicon-book-open,
+[data-theme="dark"] .course-glass-pill .reicon-book-open {
+  color: #FFFFFF !important;
+  fill: #FFFFFF !important;
+}
+
+:root:not([data-theme="light"]) .glass-surface:hover,
+[data-theme="dark"] .glass-surface:hover {
+  border-color: rgba(255, 255, 255, 0.45) !important;
+  box-shadow:
+    inset 0 1.5px 2px 0 rgba(255, 255, 255, 0.8),
+    inset 0 -1.5px 2px 0 rgba(0, 0, 0, 0.5),
+    0 8px 24px 0 rgba(0, 0, 0, 0.55),
+    0 0 18px 2px rgba(217, 70, 239, 0.3) !important;
+}
+
+.glass-surface:active {
+  transform: translateY(2px) scale(0.97);
+}
+
+.glass-surface:focus-visible {
+  outline: 2px solid #A855F7;
+  outline-offset: 2px;
+}
